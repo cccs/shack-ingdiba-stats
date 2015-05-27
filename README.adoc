@@ -1,0 +1,13 @@
+= shack ing-diba stats
+
+Collect stats from ing-diba voting (via API), create graph with gnuplot
+
+== crontab entry
+
+The glue of the whole setup:
+
+[source,shell]
+----
+*/10 * * * * $SHACKSTATS/getshackstats.py >> $SHACKSTATS/shack-votes.csv && gnuplot $SHACKSTATS/plot-shack.gnuplot
+----
+
